@@ -1,16 +1,9 @@
 /* Douceurs — service worker : le jeu marche sans internet une fois installé.
    Stratégie : on sert depuis le cache tout de suite, et on met à jour en arrière-plan. */
-const VERSION = 'douceurs-v1';
-const GAMES = [
-  'butter-spread', 'butter-cut', 'soap', 'paint', 'cake', 'pour', 'bubble', 'popit', 'slime',
-  'kinetic-sand', 'sand-art', 'peel', 'creme-brulee', 'zen', 'chocolate', 'pressure-wash',
-  'tufting', 'honey', 'ice', 'beads', 'dominos',
-];
+const VERSION = 'douceurs-v2';
 const FILES = [
-  './', 'index.html', 'style.css', 'manifest.webmanifest',
-  'js/core.js', 'js/audio.js', 'js/main.js',
+  './', 'index.html', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon.png',
-  ...GAMES.map((g) => `js/games/${g}.js`),
 ];
 
 self.addEventListener('install', (e) => {
